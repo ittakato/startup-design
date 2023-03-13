@@ -78,6 +78,15 @@ module.exports = merge(common, {
             ],
           },
         },
+        generator: [
+          {
+            preset: 'webp',
+            implementation: ImageMinimizerPlugin.imageminGenerate,
+            options: {
+              plugins: ['imagemin-webp'],
+            },
+          },
+        ],
       }),
     ],
     runtimeChunk: 'single',

@@ -1,13 +1,13 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/ts/index.ts',
+  entry: './src/ts/index',
   output: {
     path: path.resolve(__dirname, './dist'),
-    clean: true,
   },
-  resolve: { extensions: ['ts', '...'] },
+  resolve: { extensions: ['.ts', '...'] },
   module: {
     rules: [
       {
@@ -30,5 +30,6 @@ module.exports = {
       filename: 'index.html',
       template: './src/template.html',
     }),
+    new CleanWebpackPlugin(),
   ],
 };

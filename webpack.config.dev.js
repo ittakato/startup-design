@@ -5,6 +5,7 @@ const common = require('./webpack.config.common');
 
 module.exports = merge(common, {
   mode: 'development',
+  target: 'web',
   devtool: 'eval',
   devServer: {
     port: 9000,
@@ -16,7 +17,8 @@ module.exports = merge(common, {
     client: {
       overlay: true,
     },
-    liveReload: false,
+    hot: false,
+    liveReload: true,
   },
   module: {
     rules: [
