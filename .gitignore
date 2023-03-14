@@ -1,5 +1,8 @@
 # Source: https://github.com/github/gitignore/blob/main/Node.gitignore
 
+# User
+logo-edit
+
 # Logs
 logs
 *.log
