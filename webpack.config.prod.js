@@ -3,7 +3,6 @@ const glob = require('glob');
 const { merge } = require('webpack-merge');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const common = require('./webpack.config.common');
@@ -110,11 +109,11 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -137,9 +136,6 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: './css/[name].css',
-    }),
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${path.resolve(__dirname, '../src')}`, { nodir: true }),
     }),
   ],
 });
