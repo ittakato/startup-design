@@ -1,7 +1,417 @@
 @use 'normalize';
 @use 'global';
 @use 'variables' as v;
+@use 'mixins' as m;
 
-h1 {
+@use 'button';
+@use 'navbar';
+@use 'footer';
+
+%subtitle {
   font-family: v.$heading-font;
+  font-weight: 500;
+  font-size: v.$subtitle-size;
+  line-height: v.$subtitle-height;
+}
+
+.subtitle1 {
+  @extend %subtitle;
+  color: v.$purple-1;
+}
+
+.subtitle2 {
+  @extend %subtitle;
+  color: v.$blue-1;
+}
+
+.secondary-text {
+  font-size: v.$secondary-text-size;
+  line-height: v.$secondary-text-height;
+  color: v.$text-grey;
+  letter-spacing: 0.25px;
+}
+
+#gradient-canvas {
+  background-color: purple;
+  width: 200%;
+  height: 970px;
+  transform: rotate(-10deg);
+
+  position: absolute;
+  top: -600px;
+  left: -50%;
+  z-index: -1;
+
+  --gradient-color-1: #ffcb57;
+  --gradient-color-2: #ff333d;
+  --gradient-color-3: #a960ee;
+  --gradient-color-4: #90e0ff;
+}
+
+.hero {
+  @include m.center-content;
+
+  p {
+    max-width: 480px;
+  }
+
+  .hero-phone-container {
+    height: 564px;
+    align-items: flex-end;
+  }
+
+  .hero-phone {
+    height: 628px;
+    transform: translate(32px, -32px);
+  }
+}
+
+.partners-section {
+  @include m.center-content;
+
+  .partners-grid {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    margin: v.$spacing-xl 0;
+    column-gap: v.$spacing-md;
+    row-gap: v.$spacing-lg;
+
+    img {
+      height: 60px;
+      place-self: center;
+    }
+  }
+}
+
+.unified-platform-section {
+  @include m.center-content;
+  padding: v.$spacing-lg 0;
+  background-color: v.$bg-light;
+
+  .primary-btn {
+    background-color: v.$purple-1;
+
+    &:hover {
+      background-color: v.$primary-accent;
+    }
+  }
+
+  h2 {
+    width: 50%;
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+.graphic-section {
+  @include m.center-content;
+  background-color: v.$bg-light;
+
+  .graphic-grid {
+    display: grid;
+    grid-template-areas:
+      'card slack slack'
+      'phone slack slack'
+      'phone dash dash';
+    grid-gap: v.$spacing-lg;
+
+    & > img {
+      width: 100%;
+    }
+
+    #credit-card,
+    #slack-invoice,
+    #phone,
+    #dash {
+      box-shadow: v.$standard-box-shadow;
+    }
+
+    #credit-card {
+      grid-area: card;
+    }
+
+    #slack-invoice {
+      grid-area: slack;
+    }
+
+    #phone {
+      grid-area: phone;
+    }
+
+    #dash {
+      grid-area: dash;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: v.$spacing-sm v.$spacing-md v.$spacing-sm 0;
+
+  .icon {
+    height: 50px;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  h3 {
+    font-family: v.$heading-font;
+    font-size: v.$h6-size;
+    font-weight: 500;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.integrations-section {
+  @include m.center-content;
+  color: v.$text-light;
+  padding: v.$spacing-xl * 3 0;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 1100px;
+    background-color: v.$primary-accent;
+
+    position: absolute;
+    top: -32px;
+    left: 0;
+    z-index: -1;
+
+    transform: skewY(-10deg);
+  }
+
+  .card-container {
+    display: flex;
+    margin: v.$spacing-lg;
+
+    .card {
+      width: 50%;
+    }
+  }
+
+  .primary-btn {
+    background-color: v.$blue-1;
+    color: v.$primary-accent;
+    margin-top: v.$spacing-md;
+
+    &:hover {
+      background-color: v.$bg-white;
+    }
+  }
+
+  .secondary-btn {
+    color: v.$blue-1;
+  }
+}
+
+#api-code,
+#terminal-code {
+  max-width: 470px;
+  border-radius: 20px;
+}
+
+#api-code {
+  margin-bottom: v.$spacing-md;
+}
+
+.why-easypay-section {
+  @include m.center-content;
+  padding: v.$spacing-xl * 3 0;
+
+  .card-container {
+    display: flex;
+    margin: v.$spacing-lg 0;
+
+    .card {
+      width: 25%;
+      padding: 0 v.$spacing-sm 0 0;
+      margin: 0 v.$spacing-md 0 0;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .secondary-text {
+    color: v.$text-dark;
+  }
+}
+
+.global-section {
+  @include m.center-content;
+  color: v.$text-light;
+
+  padding-top: v.$spacing-xl * 3;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 1200px;
+    background-color: v.$primary-accent;
+
+    position: absolute;
+    top: -32px;
+    left: 0;
+    z-index: -1;
+    transform: skewY(-10deg);
+  }
+
+  a {
+    color: v.$blue-1;
+
+    &:hover {
+      color: v.$text-light;
+    }
+  }
+
+  .card-container {
+    display: flex;
+    margin: v.$spacing-xl * 2 0;
+
+    .card {
+      width: 25%;
+      padding-right: v.$spacing-sm;
+      margin-right: v.$spacing-md;
+
+      h3 {
+        border-left: 2px v.$blue-1 solid;
+        padding-left: v.$spacing-sm;
+        line-height: 28px;
+      }
+    }
+  }
+
+  #globe {
+    opacity: 0.25;
+    max-width: 844px;
+
+    position: absolute;
+    top: 10%;
+  }
+}
+
+.virtual-events-section {
+  @include m.center-content;
+  padding: v.$spacing-xl * 2 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: v.$bg-white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+
+  .primary-btn {
+    background-color: v.$purple-1;
+    margin-top: v.$spacing-md;
+
+    &:hover {
+      background-color: v.$primary-accent;
+    }
+  }
+
+  .card-bottom {
+    width: 100%;
+    height: 50%;
+    padding: v.$spacing-xl;
+
+    .subtitle1 {
+      margin-top: v.$spacing-lg;
+    }
+
+    .secondary-text {
+      color: v.$text-dark;
+      width: 50%;
+      font-weight: 700;
+    }
+  }
+
+  .col-left {
+    height: 446px;
+    padding-right: v.$spacing-xl;
+  }
+}
+
+.easypay-sessions-card {
+  width: 540px;
+  height: 446px;
+  border-radius: 20px;
+  box-shadow: v.$standard-box-shadow;
+  overflow: hidden;
+
+  .card-top {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      background: v.$primary-gradient;
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      top: -40%;
+      z-index: -1;
+      transform: skewY(-5deg);
+    }
+  }
+
+  #sessions-logo {
+    width: 338px;
+  }
+
+  .avatars {
+    position: absolute;
+    bottom: -70px;
+    left: v.$spacing-xl;
+    // width: 140px;
+    // height: 80px;
+
+    img {
+      width: 90px;
+    }
+
+    img:nth-of-type(2) {
+      position: absolute;
+      left: 65px;
+    }
+  }
+}
+
+.getting-started-section {
+  display: flex;
+  justify-content: center;
+  padding: v.$spacing-xl 0;
+
+  .col-right {
+    flex-direction: row;
+
+    .card {
+      width: 50%;
+
+      .secondary-btn {
+        color: v.$purple-2;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .col-left {
+    padding-right: v.$spacing-xl;
+  }
 }
