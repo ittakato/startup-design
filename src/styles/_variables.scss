@@ -58,3 +58,11 @@ $standard-width: 1144px;
 
 /* Standard Box Shadow */
 $standard-box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
+
+/* Media Queries */
+$breakpoints: (
+  'sm': 'screen and (min-width: )',
+  'md': 'screen and (min-width: )',
+  'lg': 'screen and (min-width: )',
+  'xl': 'screen and (min-width: )',
+);

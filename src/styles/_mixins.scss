@@ -1,5 +1,14 @@
+@use 'sass:map';
+@use 'variables' as v;
+
 @mixin center-content() {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+@mixin mq($breakpoint) {
+  @media #{map.get(v.$breakpoints, $breakpoint)} {
+    @content;
+  }
 }
