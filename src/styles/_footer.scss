@@ -1,0 +1,56 @@
+@use 'variables' as v;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: v.$bg-light;
+  padding: v.$spacing-xl 0;
+
+  .section-container {
+    display: flex;
+  }
+
+  .col {
+    width: 25%;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: v.$spacing-md 0;
+      }
+    }
+
+    a {
+      color: v.$text-dark;
+      font-weight: normal;
+
+      &:hover {
+        color: v.$purple-1;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .icon-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: v.$spacing-sm;
+
+    img {
+      width: 24px;
+    }
+  }
+
+  #footer-logo {
+    max-width: 180px;
+    margin-bottom: v.$spacing-md;
+  }
+
+  h3 {
+    font-size: v.$h6-size;
+    font-weight: 700;
+  }
+}
