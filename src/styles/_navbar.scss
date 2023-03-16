@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: v.$standard-width;
+  padding: 0 v.$spacing-md;
+  margin-bottom: v.$spacing-xl;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+
+  a {
+    color: v.$text-light;
+    margin: 0 v.$spacing-md;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.logo {
+  height: 32px;
+  vertical-align: middle;
+}
