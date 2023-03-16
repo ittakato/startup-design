@@ -6,8 +6,8 @@
   align-items: center;
   width: 100%;
   max-width: v.$standard-width;
-  padding: 0 v.$spacing-md;
-  margin-bottom: v.$spacing-xl;
+  padding: 0 var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
 }
 
 .menu {
@@ -16,7 +16,7 @@
 
   a {
     color: v.$text-light;
-    margin: 0 v.$spacing-md;
+    margin: 0 var(--spacing-md);
     font-weight: 700;
 
     &:hover {

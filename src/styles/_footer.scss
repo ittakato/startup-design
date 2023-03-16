@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   background-color: v.$bg-light;
-  padding: v.$spacing-xl 0;
+  padding: var(--spacing-xl) 0;
 
   .section-container {
     display: flex;
@@ -18,7 +18,7 @@
       padding: 0;
 
       li {
-        margin: v.$spacing-md 0;
+        margin: var(--spacing-md) 0;
       }
     }
 
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: v.$spacing-sm;
+    margin: var(--spacing-sm);
 
     img {
       width: 24px;
@@ -46,11 +46,11 @@
 
   #footer-logo {
     max-width: 180px;
-    margin-bottom: v.$spacing-md;
+    margin-bottom: var(--spacing-md);
   }
 
   h3 {
-    font-size: v.$h6-size;
+    font-size: var(--$h6-size);
     font-weight: 700;
   }
 }

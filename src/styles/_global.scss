@@ -19,7 +19,7 @@ body {
   width: 100%;
   margin: 0;
 
-  padding-top: v.$spacing-sm;
+  padding-top: var(--spacing-sm);
 
   display: flex;
   flex-direction: column;
@@ -43,39 +43,39 @@ h6 {
 }
 
 h1 {
-  font-size: v.$h1-size;
+  font-size: var(--h1-size);
   font-weight: 600;
   letter-spacing: -1px;
-  line-height: v.$h1-height;
+  line-height: var(--h1-height);
 }
 
 h2 {
-  // font-size: v.$h2-size;
+  // font-size: var(--h2-size);
   // font-weight: 600;
   // letter-spacing: -0.2px;
-  // line-height: v.$h2-height;
-  font-size: v.$h3-size;
+  // line-height: var(--h2-height);
+  font-size: var(--h3-size);
   font-weight: 600;
 }
 
 h3 {
-  font-size: v.$h3-size;
+  font-size: var(--h3-size);
   font-weight: 500;
 }
 
 h4 {
-  font-size: v.$h4-size;
+  font-size: var(--h4-size);
   font-weight: 500;
   letter-spacing: 0.25px;
 }
 
 h5 {
-  font-size: v.$h5-size;
+  font-size: var(--h5-size);
   font-weight: 500;
 }
 
 h6 {
-  font-size: v.$h6-size;
+  font-size: var(--h6-size);
   font-weight: 500;
 }
 
@@ -91,10 +91,10 @@ a {
 }
 
 p {
-  font-size: v.$p-size;
-  line-height: v.$p-height;
+  font-size: var(--p-size);
+  line-height: var(--p-height);
   font-weight: 400;
-  margin: v.$spacing-md 0;
+  margin: var(--spacing-md) 0;
 }
 
 .section-container {
@@ -120,10 +120,10 @@ p {
   }
 
   & > .col-left {
-    padding-right: v.$spacing-md;
+    padding-right: var(--spacing-md);
   }
 
   & > .col-right {
-    padding-left: v.$spacing-md;
+    padding-left: var(--spacing-md);
   }
 }

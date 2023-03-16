@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use 'variables' as v;
 
 @mixin center-content() {
   width: 100%;
@@ -7,8 +6,15 @@
   justify-content: center;
 }
 
+/* Media Queries */
+$breakpoints: (
+  'sm': 'only screen and (max-width: 550px)',
+  'md': 'only screen and (max-width: 768px)',
+  'lg': 'only screen and (max-width: 1144px)',
+);
+
 @mixin mq($breakpoint) {
-  @media #{map.get(v.$breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
