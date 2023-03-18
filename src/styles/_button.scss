@@ -5,7 +5,7 @@
   font-size: var(--btn-size);
   letter-spacing: 1.25px;
   font-weight: 700;
-  border-radius: 20px;
+  border-radius: v.$standard-border-radius;
   border: none;
   padding: var(--spacing-sm) var(--spacing-md);
   transition: all 0.15s ease;
@@ -14,6 +14,7 @@
     cursor: pointer;
   }
 }
+
 .primary-btn {
   @extend %btn;
   background-color: v.$primary-accent;

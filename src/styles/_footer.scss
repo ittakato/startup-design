@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .footer {
   display: flex;
@@ -8,10 +9,18 @@
 
   .section-container {
     display: flex;
+    @include m.mq(sm) {
+      flex-wrap: wrap;
+      padding-right: 0;
+    }
   }
 
   .col {
     width: 25%;
+    @include m.mq(sm) {
+      width: 50%;
+      margin: var(--spacing-md) 0;
+    }
 
     ul {
       list-style: none;
@@ -25,6 +34,9 @@
     a {
       color: v.$text-dark;
       font-weight: normal;
+      @include m.mq(sm) {
+        font-size: 0.8rem;
+      }
 
       &:hover {
         color: v.$purple-1;
@@ -37,20 +49,32 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: var(--spacing-sm);
+    margin: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 0;
 
     img {
       width: 24px;
+      @include m.mq(sm) {
+        width: 18px;
+      }
     }
   }
 
   #footer-logo {
     max-width: 180px;
     margin-bottom: var(--spacing-md);
+    @include m.mq(lg) {
+      max-width: 160px;
+    }
+    @include m.mq(md) {
+      max-width: 120px;
+    }
+    @include m.mq(sm) {
+      max-width: 140px;
+    }
   }
 
   h3 {
-    font-size: var(--$h6-size);
+    font-size: var(--h6-size);
     font-weight: 700;
   }
 }

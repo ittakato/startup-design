@@ -30,6 +30,9 @@ $heading-font: 'Anek Telugu', sans-serif;
 /* Standard Box Shadow */
 $standard-box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
 
+/* Standard Border Radius */
+$standard-border-radius: 20px;
+
 /* Width */
 $standard-width: 1144px;
 
@@ -44,13 +47,33 @@ $standard-width: 1144px;
   --btn-size: 1rem;
 
   /* Heading Size */
-  --h1-size: 5.875rem;
+  --h1-size: 5.2rem;
   --h2-size: 2.5rem;
   // --h2-size: 3.125rem;
   --h3-size: 2.5rem;
   --h4-size: 2rem;
   --h5-size: 1.75rem;
   --h6-size: 1.375rem;
+  @include m.mq(xl) {
+    --h1-size: 4.25rem;
+    --h1-height: 5rem;
+  }
+
+  @include m.mq(xl) {
+    --h1-size: 4.15rem;
+  }
+
+  @include m.mq(md) {
+    --h1-size: 3.4375rem;
+    --h1-height: 3.75rem;
+    --h2-size: 2.125rem;
+    --h3-size: 2.125rem;
+  }
+
+  @include m.mq(sm) {
+    --h1-size: 2.6rem;
+    --h1-height: 3.5rem;
+  }
 
   /* Heading Line Height */
   --h1-height: 6.75rem;
@@ -61,14 +84,4 @@ $standard-width: 1144px;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
-}
-
-@include m.mq(lg) {
-}
-
-@include m.mq(md) {
-  --h1-height: 4.5rem;
-}
-
-@include m.mq(sm) {
 }
