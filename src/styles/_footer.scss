@@ -11,6 +11,7 @@
     display: flex;
     @include m.mq(sm) {
       flex-wrap: wrap;
+      column-gap: 20px;
       padding-right: 0;
     }
   }
@@ -18,7 +19,7 @@
   .col {
     width: 25%;
     @include m.mq(sm) {
-      width: 50%;
+      width: 46%;
       margin: var(--spacing-md) 0;
     }
 

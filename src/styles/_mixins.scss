@@ -8,6 +8,7 @@
 
 /* Media Queries */
 $breakpoints: (
+  'xs': 'only screen and (max-width: 400px)',
   'sm': 'only screen and (max-width: 550px)',
   'md': 'only screen and (max-width: 768px)',
   'lg': 'only screen and (max-width: 850px)',

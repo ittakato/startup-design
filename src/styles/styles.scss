@@ -71,7 +71,7 @@
     height: 628px;
     transform: translate(32px, -32px);
     @include m.mq(md) {
-      height: 550px;
+      height: 457px;
       transform: translate(32px, 0);
     }
   }
@@ -89,10 +89,22 @@
       width: 40%;
     }
   }
+
+  @include m.mq(xs) {
+    .section-container {
+      padding-left: 0;
+    }
+  }
 }
 
 .partners-section {
   @include m.center-content;
+
+  @include m.mq(md) {
+    .section-container {
+      padding-top: 0;
+    }
+  }
 
   .partners-grid {
     display: grid;
@@ -219,7 +231,10 @@
     height: 1100px;
     background-color: v.$primary-accent;
     @include m.mq(sm) {
-      height: 950px;
+      height: 1050px;
+    }
+    @include m.mq(xs) {
+      height: 1150px;
     }
 
     position: absolute;
@@ -476,6 +491,10 @@
   .col-left {
     height: 446px;
     padding-right: var(--spacing-xl);
+
+    @include m.mq(xs) {
+      margin-bottom: var(--spacing-lg);
+    }
   }
 
   .easypay-sessions-card {
@@ -571,6 +590,9 @@
 
   .col-left {
     padding-right: var(--spacing-xl);
+    @include m.mq(sm) {
+      margin-bottom: var(--spacing-lg);
+    }
 
     .primary-btn {
       background-color: v.$purple-1;
