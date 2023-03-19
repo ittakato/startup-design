@@ -14,13 +14,12 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: v.$body-font;
   color: v.$text-dark;
 
   width: 100%;
   margin: 0;
-
-  padding-top: var(--spacing-sm);
 
   display: flex;
   flex-direction: column;
