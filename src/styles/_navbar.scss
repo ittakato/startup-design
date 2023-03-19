@@ -7,7 +7,7 @@
   align-items: center;
   width: 100%;
   max-width: v.$standard-width;
-  padding-left: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
   margin: var(--spacing-sm) 0 var(--spacing-xl) 0;
   @include m.mq(md) {
     margin-bottom: 0;
