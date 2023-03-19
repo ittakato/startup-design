@@ -13,6 +13,10 @@
       flex-wrap: wrap;
       column-gap: 20px;
       padding-right: 0;
+      padding-left: 4.4rem;
+    }
+    @include m.mq(xs) {
+      padding-left: 2.8rem;
     }
   }
 

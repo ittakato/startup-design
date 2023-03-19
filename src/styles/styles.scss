@@ -173,6 +173,15 @@
     #dash {
       box-shadow: v.$standard-box-shadow;
       border-radius: v.$standard-border-radius;
+      @include m.mq(xl) {
+        border-radius: 15px;
+      }
+      @include m.mq(md) {
+        border-radius: 10px;
+      }
+      @include m.mq(xs) {
+        border-radius: 5px;
+      }
     }
 
     #credit-card {
@@ -307,7 +316,7 @@
 #api-code,
 #terminal-code {
   max-width: 470px;
-  border-radius: v.$standard-border-radius;
+  border-radius: 5px;
 }
 
 #api-code {
@@ -492,6 +501,9 @@
     height: 446px;
     padding-right: var(--spacing-xl);
 
+    @include m.mq(sm) {
+      margin-bottom: var(--spacing-md);
+    }
     @include m.mq(xs) {
       margin-bottom: var(--spacing-lg);
     }
@@ -531,9 +543,13 @@
     }
 
     #sessions-logo {
-      width: 338px;
+      width: 474px;
+      margin-top: 2rem;
 
       @include m.mq(sm) {
+        width: 370px;
+      }
+      @include m.mq(xs) {
         width: 300px;
       }
     }

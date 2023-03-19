@@ -101,8 +101,14 @@
 
   a {
     color: #616161;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     letter-spacing: 1.5px;
+    @include m.mq(sm) {
+      font-size: 1.35rem;
+    }
+    @include m.mq(xs) {
+      font-size: 1.25rem;
+    }
   }
 
   &.openMobileNav {
