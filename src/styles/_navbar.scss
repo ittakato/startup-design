@@ -35,8 +35,8 @@
   }
 }
 
-@include m.mq(lg) {
-  .navbar-btn {
+.navbar-btn {
+  @include m.mq(lg) {
     display: none;
   }
 }
@@ -99,15 +99,23 @@
     }
   }
 
-  a {
-    color: #616161;
-    font-size: 1.5rem;
-    letter-spacing: 1.5px;
-    @include m.mq(sm) {
-      font-size: 1.35rem;
+  li {
+    &:last-of-type {
+      a {
+        color: rgba(0, 0, 0, 0.85);
+      }
     }
-    @include m.mq(xs) {
-      font-size: 1.25rem;
+
+    a {
+      color: #616161;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+      @include m.mq(sm) {
+        font-size: 1.35rem;
+      }
+      @include m.mq(xs) {
+        font-size: 1.25rem;
+      }
     }
   }
 
